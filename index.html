@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="flex-1">
+       
         <div style="display: flex; align-items: center">
           <img
             src="assets/logo.png"
@@ -22,6 +23,7 @@
         </div>
       </div>
       <div class="flex-none" style="display: flex; gap: 1rem">
+       
         <span>❤️ <span id="heart-count">0</span></span>
         <span>🪙 <span id="coin-count">100</span></span>
         <span>📋 <span id="copy-count">0</span></span>
@@ -31,6 +33,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
+   
         <img
           src="assets/logo-dark.png"
           alt="Bangladesh Government Logo"
@@ -41,13 +44,13 @@
             display: block;
           "
         />
-
+   
         <h1
           style="font-size: 2.25rem; font-weight: bold; margin-bottom: 0.5rem"
         >
           Emergency Service Directory
         </h1>
-
+       
         <p style="font-size: 1.125rem">
           Government Emergency Services at Your Fingertip - A Project by
           Government of the People's Republic of Bangladesh
@@ -55,8 +58,7 @@
       </div>
     </section>
 
-
-        <!-- Main Section -->
+    <!-- Main Section -->
     <section class="container">
       <div class="main-grid">
         <!-- Card Section -->
@@ -356,7 +358,7 @@
         <!-- History Section -->
         <div class="history-section">
           <div class="history-header">
-            
+           
             <h3 class="history-title">
               <img
                 src="assets/call-history-icon.png"
@@ -369,16 +371,13 @@
             <button class="clear-btn" onclick="clearHistory()">Clear</button>
           </div>
           <ul id="history-list">
-            <!-- Call history entries will be appended here -->
+           
           </ul>
         </div>
       </div>
     </section>
 
-
-    <!-- Script Section -->
-
-     <script>
+    <script>
       let heartCount = 0;
       let coinCount = 100;
       let copyCount = 0;
@@ -436,7 +435,7 @@
         updateHistory();
       }
 
-      // Initial update
+     
       updateCounts();
     </script>
   </body>
