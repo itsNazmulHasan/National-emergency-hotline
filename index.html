@@ -376,5 +376,68 @@
     </section>
 
 
+    <!-- Script Section -->
+
+     <script>
+      let heartCount = 0;
+      let coinCount = 100;
+      let copyCount = 0;
+      let history = [];
+
+      function updateCounts() {
+        document.getElementById("heart-count").textContent = heartCount;
+        document.getElementById("coin-count").textContent = coinCount;
+        document.getElementById("copy-count").textContent = copyCount;
+      }
+
+      function like() {
+        heartCount++;
+        updateCounts();
+      }
+
+      function callService(name, number) {
+        if (coinCount < 20) {
+          alert("Not enough coins to make the call!");
+          return;
+        }
+        alert(`Calling ${name} at ${number}`);
+        coinCount -= 20;
+        const time = new Date().toLocaleTimeString();
+        history.push({ name, number, time });
+        updateHistory();
+        updateCounts();
+      }
+
+      function copyNumber(number) {
+        navigator.clipboard
+          .writeText(number)
+          .then(() => {
+            alert(`Number ${number} copied to clipboard!`);
+            copyCount++;
+            updateCounts();
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+
+      function updateHistory() {
+        const list = document.getElementById("history-list");
+        list.innerHTML = "";
+        history.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} - ${item.number} at ${item.time}`;
+          list.appendChild(li);
+        });
+      }
+
+      function clearHistory() {
+        history = [];
+        updateHistory();
+      }
+
+      // Initial update
+      updateCounts();
+    </script>
   </body>
 </html>
