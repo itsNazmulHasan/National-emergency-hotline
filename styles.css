@@ -40,3 +40,90 @@
         grid-template-columns: 1fr;
         gap: 1rem;
       }
+
+
+            .card {
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding: 1rem;
+        text-align: center;
+      }
+      .heart-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+      }
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+      .card p {
+        margin: 0.25rem 0;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background-color: #3b82f6;
+        color: white;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        margin: 0.5rem 0;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        margin: 0.25rem;
+      }
+      .btn-outline {
+        border: 1px solid #d1d5db;
+        background-color: transparent;
+      }
+      .btn-success {
+        background-color: #22c55e;
+        color: white;
+        border: none;
+      }
+
+
+      }
+      .history-section {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .history-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .history-title {
+        font-size: 1.125rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+      .clear-btn {
+        padding: 0.5rem 1rem;
+        border: 1px solid #d1d5db;
+        background-color: transparent;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+      ul {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+
