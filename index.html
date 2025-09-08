@@ -10,51 +10,36 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="flex-1">
-       
-        <div style="display: flex; align-items: center">
+        <div class="logo-container">
           <img
             src="assets/logo.png"
             alt="Emergency Service Logo"
-            style="width: 40px; height: auto; margin-right: 0.5rem"
+            class="logo"
           />
-          <span style="font-size: 1.25rem; font-weight: bold"
-            >Emergency Service</span
-          >
+          <span class="navbar-title">Emergency Service</span>
         </div>
       </div>
-      <div class="flex-none" style="display: flex; gap: 1rem">
-       
-        <span>❤️ <span id="heart-count">0</span></span>
-        <span>🪙 <span id="coin-count">100</span></span>
-        <span>📋 <span id="copy-count">0</span></span>
+      <div class="flex-none">
+        <select class="lang-switch" onchange="toggleLanguage()">
+          <option value="en">Eng</option>
+          <option value="bn">বাংলা</option>
+        </select>
+        <span class="icon-label">❤️ <span id="heart-count">0</span></span>
+        <span class="icon-label">🪙 <span id="coin-count">100</span></span>
+        <span class="icon-label">📋 <span id="copy-count">0</span> Copy</span>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-   
         <img
           src="assets/logo-dark.png"
           alt="Bangladesh Government Logo"
-          style="
-            width: 100px;
-            height: auto;
-            margin: 0 auto 1rem auto;
-            display: block;
-          "
+          class="hero-logo"
         />
-   
-        <h1
-          style="font-size: 2.25rem; font-weight: bold; margin-bottom: 0.5rem"
-        >
-          Emergency Service Directory
-        </h1>
-       
-        <p style="font-size: 1.125rem">
-          Government Emergency Services at Your Fingertip - A Project by
-          Government of the People's Republic of Bangladesh
-        </p>
+        <h1 id="hero-title" class="hero-title">Emergency Service Directory</h1>
+        <p id="hero-slogan" class="hero-slogan">Government Emergency Services at Your Fingertip - A Project by Government of the People's Republic of Bangladesh</p>
       </div>
     </section>
 
@@ -65,30 +50,23 @@
         <div class="card-grid">
           <!-- Card 1: National Emergency -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/emergency.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">জাতীয় জরুরী সেবা</h2>
-            <p style="color: #4b5563">National Emergency Number</p>
-            <p style="font-size: 1.5rem; font-weight: bold">999</p>
+            <h3 id="national-emergency-title" class="card-title">National Emergency Number</h3>
+            <p id="national-emergency-subtitle" class="card-subtitle">National Emergency</p>
+            <p class="card-number">999</p>
             <span class="badge">All</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('999')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('National Emergency Number', '999')"
+                onclick="makeCall('National Emergency Number', '999')"
               >
                 📞 Call
               </button>
@@ -97,30 +75,23 @@
 
           <!-- Card 2: Police Helpline -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/polce.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">পুলিশ</h2>
-            <p style="color: #4b5563">Police Helpline Number</p>
-            <p style="font-size: 1.5rem; font-weight: bold">999</p>
-            <span class="badge">Police</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="police-title" class="card-title">Police</h3>
+            <p id="police-subtitle" class="card-subtitle">Police Helpline Number</p>
+            <p class="card-number">999</p>
+            <span class="badge">Police Helpline</span>
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('999')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Police Helpline Number', '999')"
+                onclick="makeCall('Police Helpline Number', '999')"
               >
                 📞 Call
               </button>
@@ -129,30 +100,23 @@
 
           <!-- Card 3: Fire Service -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/fire-service.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">অগ্নিনির্বাপণ</h2>
-            <p style="color: #4b5563">Fire Service Number</p>
-            <p style="font-size: 1.5rem; font-weight: bold">999</p>
-            <span class="badge">Fire</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="fire-title" class="card-title">Fire Service Number</h3>
+            <p id="fire-subtitle" class="card-subtitle">Fire Service </p>
+            <p class="card-number">999</p>
+            <span class="badge">Fire Service</span>
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('999')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Fire Service Number', '999')"
+                onclick="makeCall('Fire Service Number', '999')"
               >
                 📞 Call
               </button>
@@ -161,24 +125,17 @@
 
           <!-- Card 4: Ambulance -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/ambulance.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">অ্যাম্বুলেন্স</h2>
-            <p style="color: #4b5563">Ambulance Service</p>
-            <p style="font-size: 1.5rem; font-weight: bold">1994-999999</p>
-            <span class="badge">Medical</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="ambulance-title" class="card-title">Ambulance Service</h3>
+            <p id="ambulance-subtitle" class="card-subtitle">Ambulance</p>
+            <p class="card-number">1994-999999</p>
+            <span class="badge">Health</span>
+            <div class="btn-group">
               <button
                 class="btn btn-outline"
                 onclick="copyNumber('1994-999999')"
@@ -187,7 +144,7 @@
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Ambulance Service', '1994-999999')"
+                onclick="makeCall('Ambulance Service', '1994-999999')"
               >
                 📞 Call
               </button>
@@ -196,30 +153,23 @@
 
           <!-- Card 5: Women & Child Helpline -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/nari o shishu.jpg"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">নারী ও শিশু সাহায্য</h2>
-            <p style="color: #4b5563">Women & Child Helpline</p>
-            <p style="font-size: 1.5rem; font-weight: bold">109</p>
-            <span class="badge">Social</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="women-child-title" class="card-title">Women & Child Helpline</h3>
+            <p id="women-child-subtitle" class="card-subtitle">Women & Child Helpline</p>
+            <p class="card-number">109</p>
+            <span class="badge">Help</span>
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('109')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Women & Child Helpline', '109')"
+                onclick="makeCall('Women & Child Helpline', '109')"
               >
                 📞 Call
               </button>
@@ -228,30 +178,23 @@
 
           <!-- Card 6: Anti-Corruption Helpline -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/dudok.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">দুর্নীতি প্রতিরোধ</h2>
-            <p style="color: #4b5563">Anti-Corruption Helpline</p>
-            <p style="font-size: 1.5rem; font-weight: bold">106</p>
-            <span class="badge">Governance</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="anti-corruption-title" class="card-title">Anti-Corruption Helpline</h3>
+            <p id="anti-corruption-subtitle" class="card-subtitle">Anti-Corruption </p>
+            <p class="card-number">106</p>
+            <span class="badge">Govt.</span>
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('106')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Anti-Corruption Helpline', '106')"
+                onclick="makeCall('Anti-Corruption Helpline', '106')"
               >
                 📞 Call
               </button>
@@ -260,30 +203,23 @@
 
           <!-- Card 7: Electricity Outage -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/bidyut.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">বিদ্যুৎ বিভ্রাট</h2>
-            <p style="color: #4b5563">Electricity Helpline Outage</p>
-            <p style="font-size: 1.5rem; font-weight: bold">16216</p>
-            <span class="badge">Utility</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <h3 id="electricity-title" class="card-title">Electricity Helpline</h3>
+            <p id="electricity-subtitle" class="card-subtitle">Electricity Outage Helpline </p>
+            <p class="card-number">16216</p>
+            <span class="badge">Electricity</span>
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('16216')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Electricity Helpline Outage', '16216')"
+                onclick="makeCall('Electricity Helpline Outage', '16216')"
               >
                 📞 Call
               </button>
@@ -292,30 +228,23 @@
 
           <!-- Card 8: Brac Helpline -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/brac.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">ব্র্যাক</h2>
-            <p style="color: #4b5563">Brac Helpline</p>
-            <p style="font-size: 1.5rem; font-weight: bold">16445</p>
+            <h3 id="brac-title" class="card-title">Brac </h3>
+            <p id="brac-subtitle" class="card-subtitle">Brac Helpline</p>
+            <p class="card-number">16445</p>
             <span class="badge">NGO</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('16445')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Brac Helpline', '16445')"
+                onclick="makeCall('Brac Helpline', '16445')"
               >
                 📞 Call
               </button>
@@ -324,30 +253,23 @@
 
           <!-- Card 9: Bangladesh Railway Helpline -->
           <div class="card">
-            <span class="heart-icon" onclick="like()">💗</span>
+            <span class="heart-icon" onclick="updateHeartCount(this)">❤️</span>
             <img
               src="assets/Bangladesh-Railway.png"
               alt="Icon"
-              style="width: 40px; height: 40px; margin: 0 auto; display: block"
+              class="service-icon"
             />
-            <h2 class="card-title">বাংলাদেশ রেলওয়ে</h2>
-            <p style="color: #4b5563">Bangladesh Railway Helpline</p>
-            <p style="font-size: 1.5rem; font-weight: bold">163</p>
+            <h3 id="railway-title" class="card-title">Bangladesh Railway</h3>
+            <p id="railway-subtitle" class="card-subtitle">Bangladesh Railway </p>
+            <p class="card-number">163</p>
             <span class="badge">Travel</span>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                gap: 0.5rem;
-              "
-            >
+            <div class="btn-group">
               <button class="btn btn-outline" onclick="copyNumber('163')">
                 📋 Copy
               </button>
               <button
                 class="btn btn-success"
-                onclick="callService('Bangladesh Railway Helpline', '163')"
+                onclick="makeCall('Bangladesh Railway Helpline', '163')"
               >
                 📞 Call
               </button>
@@ -358,85 +280,22 @@
         <!-- History Section -->
         <div class="history-section">
           <div class="history-header">
-           
             <h3 class="history-title">
               <img
                 src="assets/call-history-icon.png"
                 alt="History Icon"
-                style="width: 20px; height: auto; margin-right: 0.5rem"
+                class="history-icon"
               />
               Call History
             </h3>
-           
             <button class="clear-btn" onclick="clearHistory()">Clear</button>
           </div>
-          <ul id="history-list">
-           
+          <ul id="call-history">
           </ul>
         </div>
       </div>
     </section>
 
-    <script>
-      let heartCount = 0;
-      let coinCount = 100;
-      let copyCount = 0;
-      let history = [];
-
-      function updateCounts() {
-        document.getElementById("heart-count").textContent = heartCount;
-        document.getElementById("coin-count").textContent = coinCount;
-        document.getElementById("copy-count").textContent = copyCount;
-      }
-
-      function like() {
-        heartCount++;
-        updateCounts();
-      }
-
-      function callService(name, number) {
-        if (coinCount < 20) {
-          alert("Not enough coins to make the call!");
-          return;
-        }
-        alert(`Calling ${name} at ${number}`);
-        coinCount -= 20;
-        const time = new Date().toLocaleTimeString();
-        history.push({ name, number, time });
-        updateHistory();
-        updateCounts();
-      }
-
-      function copyNumber(number) {
-        navigator.clipboard
-          .writeText(number)
-          .then(() => {
-            alert(`Number ${number} copied to clipboard!`);
-            copyCount++;
-            updateCounts();
-          })
-          .catch((err) => {
-            console.error("Failed to copy: ", err);
-          });
-      }
-
-      function updateHistory() {
-        const list = document.getElementById("history-list");
-        list.innerHTML = "";
-        history.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.name} - ${item.number} at ${item.time}`;
-          list.appendChild(li);
-        });
-      }
-
-      function clearHistory() {
-        history = [];
-        updateHistory();
-      }
-
-     
-      updateCounts();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
